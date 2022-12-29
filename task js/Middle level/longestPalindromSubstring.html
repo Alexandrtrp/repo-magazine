@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use script"
+
+        const s1 = "babad";
+        const s2 = "cbbd";
+
+    //     var longestPalindrome = function(s) {
+
+    //         let a = s.split('');
+    //         let res = [];
+    //         //console.log(a);
+    //     for(let i = 0; i < a.length; i++){
+    //         //console.log(a);
+    //         let l = 0;
+    //         if(a[i - l] === a[i + l + 1]){
+    //             l++;
+    //         } else{
+    //             res = res.concat(l);
+    //             console.log(res);
+    //         }
+    //     };
+    // };
+
+
+
+var longestPalindrome = function(s) {
+    
+    if (s === "") {
+        return "";
+    }
+    
+    let str = s.split('');
+    let res = [-1, -1]; // [maxLen, index]
+    str.forEach((ch, i) => {
+        isPalindrom(str, i, i, res);
+        isPalindrom(str, i , i + 1, res);
+    });
+    console.log(s.substring(res[1], res[1] + res[0]));
+    return s.substring(res[1], res[1] + res[0]);
+};
+
+function isPalindrom(str, left, right, res) {
+    let cur = 0;
+    while (right < str.length && left >= 0 && str[left] === str[right]) {
+        cur = right - left + 1;
+        if (cur > res[0]) {
+            res[1] = left;
+            res[0] = cur;
+        } 
+        left--;
+        right++;
+    }
+}
+
+    longestPalindrome(s1);
+    longestPalindrome(s2);
+    </script>
+</body>
+</html>

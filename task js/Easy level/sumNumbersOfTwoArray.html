@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use script"
+
+        // В фунцкию передаются два массива, которые представляют собой целые положительные числа,
+        // написанные в обратном порядке. Задача сложить эти два числа
+        // и вернуть обратно в виде массива с числом написанным так же в обратном порядке.
+
+
+let l1 = [2,4,3];
+let l2 = [5,6,4];
+
+var addTwoNumbers = function(l1, l2) {
+    let a = +l1.reverse().join('');
+    let b = +l2.reverse().join('');
+    let c = a + b;
+    c = String(c).split('').reverse();
+    console.log(c);
+    return c;
+
+};
+
+
+addTwoNumbers(l1, l2);
+
+    </script>
+</body>
+</html>

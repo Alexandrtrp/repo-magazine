@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        "use script"
+let s1 = "Helloooo World";
+let s2 = "   fly me   to   the moon  ";
+let s3 = "luffy isssssss still joyboy";
+// Находим длину и номер самого большого слова без учета пробелов
+var maxLengthOfWord = function(s) {
+    let tmp = s.split(' ');
+    console.log(tmp);
+    let restmp = [];
+    let l = 0;
+    for(let i = tmp.length - 1 ; i >= 0; i-- ){
+        if(tmp[i] === ''){
+            restmp.push(0);
+            continue;
+        } 
+        l = tmp[i].length;
+        restmp.push(l); 
+        //console.log(restmp);
+    }
+    restmp.reverse();
+    //console.log(restmp);
+    let maxIndex = restmp.indexOf( Math.max.apply(null, restmp)); 
+    let maxLength = Math.max.apply(null, restmp);
+    console.log([maxLength, maxIndex]);
+    return [maxLength, maxIndex];
+    
+};
+
+//maxLengthOfWord(s1);
+maxLengthOfWord(s2);
+maxLengthOfWord(s3);
+
+</script>
+    
+</body>
+</html>
