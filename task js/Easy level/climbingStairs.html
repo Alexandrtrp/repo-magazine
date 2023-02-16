@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use script"
+
+        let n1 = 10;
+        let n2 = 4;
+        
+//Version1
+var climbStairs = function(n) {
+    var result = 0;
+    if(n === 0) return 0;
+    if(n === 1) return 1;
+    if(n === 2) return 2;
+    var per1 = 1;
+    var per2 = 2;
+    for(var i = 2; i < n; i++){
+        result = per1 + per2;
+        per1 = per2;
+        per2 = result;
+    }
+    //console.log(result);
+    return result;
+};
+
+//Version2
+// var climbStairs = function(n) {
+//     var array = [0, 1, 2];
+//     for(var i = 3; i <= n; i++){
+//         array[i] = array[i - 1] + array[i - 2];
+//     }
+//     console.log(array[n])
+//     return array[n];
+// };
+
+// Решение с помощью формулы Бине
+
+// const fib = n => {
+//   const a = (1 + 5 ** 0.5) / 2;
+//   return Math.round(a ** n / 5 ** 0.5);
+// }
+
+        climbStairs(n1);
+        climbStairs(n2);
+    </script>
+</body>
+</html>

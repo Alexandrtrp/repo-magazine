@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use script"
+let digits1 = [1,2,3];
+let digits2 = [4,3,2,1];
+let digits3 = [9];
+let digits4 = [6,1,4,5,3,9,0,1,9,5,1,8,6,7,0,5,5,4,3];
+
+var plusOne = function(digits) {
+
+    let tmp = 1;
+    tmp = BigInt(tmp);
+
+    digits = digits.join('');
+    console.log(digits);
+    digits = BigInt(digits) + tmp;
+    console.log(digits);
+    digits = String(digits).split('');
+    console.log(digits);
+    return digits;
+
+
+};
+
+// plusOne(digits1);
+// plusOne(digits2);
+//plusOne(digits3);
+plusOne(digits4);
+
+
+
+    </script>
+</body>
+</html>

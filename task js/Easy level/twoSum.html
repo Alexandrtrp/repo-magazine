@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use script"
+
+    const arr1 = [2,7,11,15];
+    const arr2 = [3,2,4];
+    const arr3 = [3,3];
+
+
+
+    // var twoSum = function(nums, target) {
+    //     for(let i = 0; i < nums.length; i++){
+    //         let first = nums[i];
+    //         for(let b = 0; b < nums.length; b++){
+    //             let second = nums[b];
+    //             if(first + second === target && i !=b){
+    //                 console.log(`Первое число ${first} с индексом ${i} ,  второе число ${second} с индексом ${b}, цель ${target} `)
+    //                 return [i, b];
+    //             }
+    //         }
+    //     }
+    // };
+
+
+    // Решения с помощью бинарного поиска
+
+    // var twoSum = function(nums, k) {
+    //     for(let i = 0; i < nums.length; i++){
+    //         let nFind = k - nums[i];
+    //         let l = i + 1;
+    //         let r = nums.length - 1;
+    //         while(l <= r){
+    //             let mid = l + (r-l)/2;
+    //             if(nums[mid] === nFind){
+    //                 console.log(nums[i], nums[mid], i , mid);
+    //                 return [i, mid];
+    //             }
+    //             if(nFind < nums[mid]){
+    //                 r = mid - 1;
+    //             } else{
+    //                 l = mid + 1;
+    //             }
+    //         }
+    //     }
+    //     return [];
+    // };
+
+    // Подходит только для отсортированных массивов, поэтому тут дополнительно отсортирован масссив
+    // и выводятся сами числа, а не их индекс в массиве
+    // Метод с помощью двух указателей
+
+    var twoSum = function(nums, k) {
+        nums.sort((a, b) => a - b);
+        let l = 0;
+        let r = nums.length - 1;
+        while(l < r){
+            let sum = nums[l] + nums[r];
+            if(sum === k){
+                console.log(nums[l], nums[r]);
+                return [nums[l], nums[r]];
+            }
+            if(sum < k){
+                l++;
+            } else{
+                r--;
+            }
+        };
+        return [];
+    };
+
+
+    twoSum(arr1, 9);
+    twoSum(arr2, 6);
+    twoSum(arr3, 6);
+    </script>
+</body>
+</html>

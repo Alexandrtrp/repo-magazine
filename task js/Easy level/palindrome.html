@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use script"
+    var isPalindrome = function(x) {
+    let a = prompt('num');
+    const b = a.toString().split('');
+    console.log(b);
+
+    for(let i = 0; i < b.length; i++){
+        //let c = true;
+        if(i === b.length - 1){
+            console.log('this is palindrom');
+            return true;
+        } else if(b[i] == b[b.length - (i+1)] ){
+            
+        } else {
+            console.log('This is not palindrom');
+            return false;
+        }
+    }; 
+    
+};
+
+isPalindrome();
+
+    </script>
+</body>
+</html>
